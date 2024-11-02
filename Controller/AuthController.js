@@ -1,4 +1,4 @@
-const {generateTokenAndSetCookies} = require('../lib/GenerateToken');
+const  { generateTokenAndSetCookies } = require('../lib/GenerateToken');
 const User = require("../Schema/UserSchema")
 const bcrypt = require('bcryptjs');
 const signup = async(req,res)=>{   
@@ -36,7 +36,7 @@ const newUser =  User({
     password:hashedPassword});
 
 if(newUser){
- const generateTokenAndSetCookies=(newUser._id , res)
+generateTokenAndSetCookies=(newUser._id , res)
   await newUser.save()
    res.status(200).send({
     _id:newUser._id,
@@ -73,7 +73,7 @@ const login = async(req,res)=>{
          if(!isPasswordValid){
              return res.status(400).send("Invalid  Password")
          }
-       const  generateTokenAndSetCookies(userdata._id , res)
+     generateTokenAndSetCookies(userdata._id , res)
          res.status(200).json(     
             {    
                 _id: userdata._id,      

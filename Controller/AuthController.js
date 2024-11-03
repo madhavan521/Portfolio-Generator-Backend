@@ -86,24 +86,17 @@ const login = async (req, res) => {
 }  
 
 // LOGOUT  
-const logout = async (req, res) => {  
-    try {  
-        
-        if (req.cookies.jwt) {  
-            res.cookie('jwt', '', {  
-                maxAge: 0,  
-                httpOnly: true,  
-                sameSite: 'Strict'  
-            });  
-            return res.status(200).send("Logout successful");  
-        } else {  
-            return res.status(400).send("No user is currently logged in");  
-        }  
-    } catch (err) {  
-        console.error(err);  
-        return res.status(500).send("Internal Server Error");  
-    }  
-}; 
+ //LOGOUT
+const logout = async(req, res) =>{
+    try 
+    {
+        res.cookie('jwt', '', { maxAge: 0, httpOnly: true, sameSite: 'Strict' });
+        res.status(200).send("Logout Successfully");
+    } 
+    
+    catch (err) {
+        res.status(500).send("Internal Server Error"); 
+    } };
 
 const getMe = async (req, res) => {  
     try {  

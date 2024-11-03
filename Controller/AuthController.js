@@ -90,7 +90,10 @@ const login = async (req, res) => {
 const logout = async(req, res) =>{
     try 
     {
-        res.cookie('jwt', '', { maxAge: 0, httpOnly: true, sameSite: 'Strict' });
+        res.cookie('jwt', '', { maxAge: 0,       
+       httpOnly: true, // Prevents client-side JavaScript from accessing the cookie  
+       secure: true,
+      sameSite: 'none'   });
         res.status(200).send("Logout Successfully");
     } 
     

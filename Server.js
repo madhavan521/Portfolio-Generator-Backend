@@ -17,7 +17,7 @@ const projectrouter = require("./Router/ProjectRouter")
 //MiddleWare
 app.use(express.json())
 app.use(cors({
-    origin:"https://portfolio-generator-frontend-pmnv5qalc.vercel.app",
+    origin:"https://portfolio-generator-frontend-xi.vercel.app",
     credentials:true
 }))
 app.use(cookieParser())

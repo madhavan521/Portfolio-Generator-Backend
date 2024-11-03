@@ -1,4 +1,4 @@
-var  { generateTokenAndSetCookies } = require('../lib/GenerateToken');
+const  generateTokenAndSetCookies = require('../lib/GenerateToken');
 const User = require("../Schema/UserSchema")
 const bcrypt = require('bcryptjs');
 const signup = async(req,res)=>{   
